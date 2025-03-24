@@ -17,7 +17,6 @@
 body{
     font-family: var(--font-display);
     color: var(--Grey-400);
-    /* padding: 1rem; */
 }
 
 .contain{
@@ -87,14 +86,12 @@ article img{
 }
 
 .column{
-    margin-left: auto;
-    margin-right: auto;
-    @apply flex flex-col gap-4
+    @apply flex flex-col gap-16 ml-auto mr-auto;
 }
 
 @media (width<=900px){
     main{
-        @apply grid-cols-1
+        @apply grid-cols-1;
     }
     article{
         @apply w-[90vw];
@@ -118,18 +115,19 @@ article img{
     }
     
     h2 ~ p {
-        margin-top: 0rem;
+        @apply mt-0;
     }
 
     h2 ~ p{
-        padding: 1rem;
+        @apply p-4;
     }
 }
 @media (width<360px){
     h1,h2{
-        font-size: 20px;
+        @apply text-[20px]
     }
 }
+
 .dark-grey{
-    color: var(--Grey-500);
+    @apply text-[var(--Grey-500)];
 }
