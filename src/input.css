@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+	/* ### Primary */
+	--Red: hsl(0, 78%, 62%);
+	--Cyan: hsl(180, 62%, 55%);
+	--Orange: hsl(34, 97%, 64%);
+	--Blue: hsl(212, 86%, 64%);
+	/* ### Neutral */
+	--Grey-500: hsl(234, 12%, 34%);
+	--Grey-400: hsl(212, 6%, 44%);
+	--White: hsl(0, 0%, 100%);
+    --font-display:Poppins,sans-serif;
+}
+
+body{
+    font-family: var(--font-display);
+    color: var(--Grey-400);
+    /* padding: 1rem; */
+}
+
+.contain{
+    @apply w-screen h-screen flex flex-col text-center items-center  mt-12;
+}
+
+h1,h2{    
+    @apply text-3xl;
+}
+
+h2{
+    @apply font-semibold mt-4;
+}
+
+h2 ~ p {
+    @apply mt-[2rem] max-w-[550px];
+ 
+}
+
+main{
+
+    @apply w-screen flex items-center justify-center gap-10 p-[2rem];
+
+}
+
+main  article{
+    @apply shadow-lg border-t-[5px];
+}
+
+main > article:nth-child(1){
+    @apply border-[var(--Cyan)];
+}
+
+main > article:last-child{
+    @apply border-[var(--Blue)];
+}
+
+
+article{
+    @apply w-[24vw] min-h-[245px] text-left p-4;  
+}
+
+article > h3{
+    @apply text-[var(--Grey-500)] text-lg font-bold;
+}
+
+article img{
+    @apply mt-[4.5vw] ml-auto;
+}
+
+.column{
+    @apply flex flex-col gap-4
+}
+
+@media (width<=900px){
+    main{
+        @apply flex-col
+    }
+    article{
+        @apply w-[90vw];
+    }
+    
+}
+
+
+.column article:nth-child(1){
+    @apply border-[var(--Red)];
+}
+
+.column article:nth-child(2){
+    @apply border-[var(--Orange)];
+}
+
+
+@media (width<400px){
+    h1,h2{
+        @apply text-[7vw];
+    }
+    
+    h2 ~ p {
+        margin-top: 0rem;
+    }
+
+    h2 ~ p{
+        padding: 1rem;
+    }
+}
+@media (width<360px){
+    h1,h2{
+        font-size: 20px;
+    }
+}
+.dark-grey{
+    color: var(--Grey-500);
+}
