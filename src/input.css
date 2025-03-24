@@ -21,11 +21,15 @@ body{
 }
 
 .contain{
-    @apply w-screen h-screen flex flex-col text-center items-center  mt-12;
+    @apply text-center grid  mt-12;
 }
 
 h1,h2{    
     @apply text-3xl;
+}
+
+.title{
+    @apply text-center ml-auto mr-auto
 }
 
 h2{
@@ -39,9 +43,23 @@ h2 ~ p {
 
 main{
 
-    @apply w-screen flex items-center justify-center gap-10 p-[2rem];
+    @apply w-screen grid grid-cols-3 gap-10 p-[2rem];
+    /* margin-left: auto; */
+    /* margin-right: auto */
+}
+
+main > article{
+
+    @apply mt-auto mb-auto p-[2rem];
 
 }
+
+main > article:first-child{
+
+    @apply ml-auto;
+
+}
+
 
 main  article{
     @apply shadow-lg border-t-[5px];
@@ -69,12 +87,14 @@ article img{
 }
 
 .column{
+    margin-left: auto;
+    margin-right: auto;
     @apply flex flex-col gap-4
 }
 
 @media (width<=900px){
     main{
-        @apply flex-col
+        @apply grid-cols-1
     }
     article{
         @apply w-[90vw];
